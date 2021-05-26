@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}Registation Form{% endblock %}
+{% block content %}
+
+
+
+    <div class="container">
+        <div class="row w-100 d-flex  justify-content-center align-items-center main__div">
+            <div class="col-12 col-md-8 col-xxl-6">
+                <div class="card">
+                    <h2>Registation Form</h2>
+                    {% include 'alerts.html' %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="fname" class="form-control shadow-none" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="lname" class="form-control shadow-none" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label>Birthday</label>
+                                    <input type="date" name="birthday" class="form-control shadow-none" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <div class="d-flex">
+                                        <div class="form-check pr-4">
+                                            <input class="form-check-input" type="radio" value="male" name="gender" id="male" checked>
+                                            <label class="form-check-label" for="male">
+                                            Male
+                                            </label>
+                                        </div>
+                                        <div style="margin-left: 30px;" class="form-check">
+                                            <input class="form-check-input" type="radio" value="female" name="gender" id="female">
+                                            <label class="form-check-label" for="female">
+                                            Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email" class="form-control shadow-none"required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="number" name="phone" class="form-control shadow-none"required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Do you have NID?</label>
+                            <select id="is_nid" class="form-control shadow-none">
+                                <option selected value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div id="nid__input" class="form-group">
+                            <label>NID Number</label>
+                            <input type="number" id="nid" name="nid" class="form-control shadow-none" required>
+                        </div>
+
+                        <button class="btn submit_buttton" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
